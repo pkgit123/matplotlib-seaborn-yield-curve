@@ -65,6 +65,14 @@ interval=1
 plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
 plt.gca().xaxis.set_major_locator(mdates.MonthLocator(bymonthday = interval))
 
+'''
+# Changes x-axis range
+td = pd.Timedelta(7, "d")
+left = data[x].min()-td
+right = data[x].max()+td
+plt.gca().set_xbound(left, right)
+'''
+
 
 # put a title
 plt.title(f"`Treasury yields in Year: {str_year}`")
